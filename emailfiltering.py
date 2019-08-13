@@ -11,15 +11,15 @@ import os
 # df = pd.DataFrame(columns)
 
 # read in current .csv file
-df = pd.read_csv('C:/Users/t011978/Documents/EmailMetrics/output/output.csv', index_col=0)
+df = pd.read_csv('', index_col=0)
 
 # get list of all files and the archives
-listdir = os.listdir('C:/Users/t011978/Documents/EmailMetrics/input')
-archivelist = os.listdir('C:/Users/t011978/Documents/EmailMetrics/writefiles')
+listdir = os.listdir('')
+archivelist = os.listdir('')
 
 #iterate over each file in the directory, get the datekey from the name of the file
 for object in listdir:
-    openfilepath = 'C:/Users/t011978/Documents/EmailMetrics/input/' + object
+    openfilepath = '' + object
     datekeyval = object[:8]
     filematch = datekeyval + 'test.csv'
     found = 0
@@ -37,7 +37,7 @@ for object in listdir:
         with open(openfilepath, 'r') as csvfile:
             reader = csv.reader(csvfile)
             i=0
-            newfilepath = 'C:/Users/t011978/Documents/EmailMetrics/writefiles/' + datekeyval + 'test.csv'
+            newfilepath = '' + datekeyval + 'test.csv'
             with open(newfilepath, 'w') as newfile:
                 writer = csv.writer(newfile)
                 for row in reader:
@@ -63,7 +63,7 @@ for object in listdir:
 
 
 # write to master output file
-df.to_csv('C:/Users/t011978/Documents/EmailMetrics/output/output.csv')
+df.to_csv('')
 
 
 
